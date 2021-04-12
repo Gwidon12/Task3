@@ -8,7 +8,7 @@ public class Graph {
 
 
     public int numberOfseparatedGraphs(int[][] inputArray) {
-        int numberOfGraphs = 0;
+        int numberOfGraphs = 1;
         List<Integer> flatInputList = new ArrayList<>();
 
         for (int[] ints : inputArray) {
@@ -16,7 +16,7 @@ public class Graph {
             flatInputList.add(ints[1]);
         }
         flatInputList = flatInputList.stream().sorted().collect(Collectors.toList());
-        for (int i = 0; i < flatInputList.size() - 2; i++) {
+        for (int i = 0; i < flatInputList.size() - 1; i++) {
             if (flatInputList.get(i) + 1 < flatInputList.get(i + 1)) {
                 numberOfGraphs++;
             }
