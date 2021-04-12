@@ -6,7 +6,8 @@ public class Task3 {
         CustomScanner customScanner = new CustomScanner();
         int[][] scan = customScanner.scan();
         Graph graph = new Graph();
-        graph.numberOfseparatedGraphs(scan);
+        int numberOfGraphs = graph.numberOfseparatedGraphs(scan);
+        System.out.println("Number of separated graphs: " + numberOfGraphs);
     }
 
 }
