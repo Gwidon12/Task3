@@ -1,8 +1,10 @@
 package pl.patryk.recruitment;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Graph {
 
@@ -16,12 +18,12 @@ public class Graph {
             flatInputList.add(ints[1]);
         }
         flatInputList = flatInputList.stream().sorted().collect(Collectors.toList());
-        for (int i = 0; i < flatInputList.size() - 1; i++) {
-            if (flatInputList.get(i) + 1 < flatInputList.get(i + 1)) {
+        for (int[] ints : inputArray) {
+            Stream<Integer> currentPair = flatInputList.stream().filter(integer -> integer == ints[0] || integer == ints[1]);
+            if (currentPair.count() == 2){
                 numberOfGraphs++;
             }
         }
-
-        return numberOfGraphs;
+        return Math.min(numberOfGraphs, inputArray.length);
     }
 }
