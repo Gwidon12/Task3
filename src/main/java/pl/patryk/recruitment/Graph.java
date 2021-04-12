@@ -1,7 +1,6 @@
 package pl.patryk.recruitment;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -20,7 +19,7 @@ public class Graph {
         flatInputList = flatInputList.stream().sorted().collect(Collectors.toList());
         for (int[] ints : inputArray) {
             Stream<Integer> currentPair = flatInputList.stream().filter(integer -> integer == ints[0] || integer == ints[1]);
-            if (currentPair.count() == 2){
+            if (currentPair.count() == 2) {
                 numberOfGraphs++;
             }
         }
